@@ -75,6 +75,10 @@
    right: 25%;
      font-size: 250%;
    }
+h2.skills{
+text-align:center;
+font-size:200%;
+}
 div p{
   color: #f7bcf7;
   font-size: 25px;
@@ -192,6 +196,9 @@ h2.me{
     width: 60%;
     height: 100%;
    }
+h2.skills{
+font-size:150%;
+}
     
     }
     @media (min-width:400px){
