@@ -119,6 +119,7 @@ div.social img:hover{
 .btn:hover{
   border: 2px solid white;
   background-color: transparent;
+ color:red;
 }
 img.about{
   width: 50%;
