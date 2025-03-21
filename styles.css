@@ -1,0 +1,90 @@
+:root {
+    --bg1: #22282a;
+    --bg2: #171a1c;
+    --fc: #f7bcf7;
+}
+
+body {
+    margin: 0;
+    box-sizing: border-box;
+    background-color: var(--bg1);
+    color: white;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 400px;
+    padding: 30px;
+    border: 2px solid white;
+    border-radius: 40px;
+    background-color: var(--bg2);
+    color: var(--fc);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.group {
+  margin-bottom: 10px;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--fc);
+    border-radius: 5px;
+    background-color: #333; 
+    color: var(--fc);
+   outline: none;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #ccc;
+}
+
+input:focus,
+textarea:focus {
+    border-color: limegreen; 
+}
+
+h1 {
+    color: red;
+    text-align: center;
+    font-weight: bold;
+}
+
+.btn {
+    width: 100%;
+    padding: 10px;
+    margin: 10px;
+    background-color: seagreen;
+    border: 1px solid transparent;
+    border-radius: 30px;
+    color: white; 
+    font-weight: bold; 
+}
+
+.btn:hover {
+    border-color: black;
+    background-color: limegreen;
+    transition-delay: 0.1s;
+    transition-duration: 0.6s;
+}
+@media (max-width: 400px){
+ .container{
+   
+ border-radius: 30px;
+}
+}
