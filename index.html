@@ -21,7 +21,7 @@
    <li><a href="#">Services</a></li>
    <li><a href="#">Contact me</a></li>
   </ul>
- </nav>
+ </nav><div id="content">
  <section class="one">
    <div class="container">
    <h2>Welcome,<span class="front">I'm FRONT END<br> DEVELOPER</span></h2>
@@ -68,11 +68,61 @@
   </div>
    
   </div>
-</section>
+</section></div>
 <hr>
  <footer>
   <p>All copyrights reserved to developer Amjad Khaled ©2023</p>
   <p>proded by AMJAD KHALED</p>
  </footer>
+      <script>
+        // دالة لتحميل المحتوى من ملف contact.html
+        function loadContactContent() {
+            fetch('contact.html')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.text();
+                })
+                .then(data => {
+                    document.getElementById('content').innerHTML = data;
+                    history.pushState({ page: 'contact' }, '', 'contact.html');
+                })
+                .catch(error => {
+                    console.error('There was a problem with the fetch operation:', error);
+                });
+        }
+
+        // دالة لإعادة تحميل الصفحة الرئيسية
+        function loadHomeContent() {
+            document.getElementById('content').innerHTML = 
+                <h1>مرحبًا بك في الصفحة الرئيسية!</h1>
+                <p>هذا هو المحتوى الأصلي للصفحة الرئيسية.</p>
+            ;
+            history.pushState({ page: 'home' }, '', 'index.html');
+        }
+
+        // إضافة مستمعي الأحداث
+        document.getElementById('homeLink').addEventListener('click', function(e) {
+            e.preventDefault(); // منع إعادة تحميل الصفحة
+            loadHomeContent();
+        });
+
+        document.getElementById('contactLink').addEventListener('click', function(e) {
+            e.preventDefault(); // منع إعادة تحميل الصفحة
+            loadContactContent();
+        });
+
+        // التعامل مع العودة إلى الصفحات السابقة
+        window.onpopstate = function(event) {
+            if (event.state) {
+                if (event.state.page === 'contact') {
+                    loadContactContent();
+                } else {
+                    loadHomeContent();
+                }
+            }
+        };
+                  </script>
 </body>
 </html>
